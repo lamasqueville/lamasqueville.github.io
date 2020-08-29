@@ -43,20 +43,14 @@ var $sitehead = $('#site-head');
 		$('a.btn.site-menu').click(function (e) {
 			srcToAnchorWithTitle($(e.target).data('title').toLowerCase().split(' ').join('-'));
 		});
+		
 		$('#header-arrow').click(function () {
 			srcTo($first);
 		});
 
-		$fnav.append("<a class='fn-item fn-item--home'>Accueil</a>")
-		$('.fn-item--home').click(function () {
-			var top = $("#site-head");
-			$('html, body').animate({
-				scrollTop: top.offset().top
-			}, 400);
-		});
-
 		$('.post-title').each(function () {
 			var t = $(this).text();
+			var id = $(this).attr("id");
 			var index = $(this).parents('.post-holder').index();
 			$fnav.append("<a class='fn-item fn-item--" + index +"' item_index='"+index+"'>"+t+"</a>")
 			$(this).parents('article').attr('id',t.toLowerCase().split(' ').join('-'));
