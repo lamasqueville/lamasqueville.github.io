@@ -24,7 +24,6 @@
 
    @import url(normalize.css);
 
-
    /* ==========================================================================
       1. Icons - Sets up the icon font and respective classes
       ========================================================================== */
@@ -91,7 +90,7 @@
        max-height: 100%;
        /* font-family: 'Droid Serif', serif; */
        /* font-family: 'Open Sans', sans-serif; */
-       font-family: 'Roboto Slab', serif;
+       font-family: 'Roboto', serif;
        font-size: 2.0rem;
        line-height: 1.6em;
        color: #3A4145;
@@ -126,13 +125,13 @@
        line-height: 1;
        margin-top: 0;
        margin-bottom: 10px;
-       font-family: 'Open Sans', sans-serif;
+       font-family: 'Roboto', sans-serif;
    }
    h3, h4, h5, h6 {
        text-rendering: optimizeLegibility;
        line-height: 120%;
        margin-top: 0;
-       font-family: 'Open Sans', sans-serif;
+       font-family: 'Roboto', sans-serif;
        margin-bottom: 0%;
    }
    
@@ -532,8 +531,8 @@
        width: 80%;
        max-width: 700px;
        margin: 0rem auto;
-       padding-bottom: 4rem;
-       padding-top: 4rem;
+       padding-bottom: 1rem;
+       padding-top: 1rem;
        height: 70%;
        word-break: break-word;
        hyphens: auto;
@@ -1115,7 +1114,6 @@
        }
    
    }
-   
    /* ==========================================================================
       End of file. Media queries should be the last thing here. Do not add stuff
       below this point, or it will probably fuck everything up.
