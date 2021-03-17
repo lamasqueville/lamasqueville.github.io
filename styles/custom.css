@@ -1,0 +1,24 @@
+.contact {
+    height: 10em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    margin-bottom: 30px;
+}
+
+.contact img.icon {
+    width: 30px;
+    margin: 0 10px 0 0;
+}
+
+.contact .contact-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.contact .contact-item.phone .separator {
+    margin: 0 10px;
+}
