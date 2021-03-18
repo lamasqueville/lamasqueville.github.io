@@ -23,6 +23,16 @@
     margin: 0 10px;
 }
 
+.btn-cta {
+    background-color: #1a936f!important;
+}
+
+.btn-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 .cta.rooms {
     display: flex;
     flex-direction: row;

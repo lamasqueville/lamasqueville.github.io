@@ -116,8 +116,8 @@ Ici, les maisons touchent en un même temps le ciel et les flots.</p>
 
 
 <div class="cta rooms">
-    <a class="btn site-menu cta-item" data-title="La Cèdre" style="width:30%; text-align:center">La Cèdre</a>
-    <a class="btn site-menu cta-item" data-title="La Tamaris" style="width:30%; text-align:center">La Tamaris</a>
+    <a class="btn btn-cta site-menu cta-item" data-title="La Cèdre" style="width:30%; text-align:center">La Cèdre</a>
+    <a class="btn btn-cta site-menu cta-item" data-title="La Tamaris" style="width:30%; text-align:center">La Tamaris</a>
 </div>
 
 <p>La maison met à votre entière disposition un grand salon, salle à manger avec cheminée. Cette pièce de vie traversante entre le jardin et une verrière côté cour
@@ -136,12 +136,195 @@ vous accuillera pour les petit déjeuners.</p>
                 </header>
                 <section class="post-content">
                     <p><h3 id="la-cèdre">La Cèdre</h3>
+
+
+
+
+
+
+
+
+
+    
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
+
+
+
+<style>
+#slide-show-cedre {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    top: 0px;
+    left: 0px;
+
+    margin: 50px 0;
+}
+
+#slide-show-cedre .slides-list {
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    transform: translate3d(0px, 0px, 0px);
+    transition: all 0.66s ease;
+    -webkit-transition: all 0.66s ease;
+}
+
+#slide-show-cedre .slide {
+    list-style: none;
+    position: relative;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 300px;
+    background: #ccc;
+    text-align: center;
+    line-height: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    color: #fff;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    -webkit-transform-style: preserve-3d;
+}
+
+#slide-show-cedre .nav {
+    position: relative;
+    z-index: 9;
+    top: 45%;
+    cursor: pointer;
+    color: #fff;
+    opacity: 0.5;
+    transition: all 0.66s ease;
+    -webkit-transition: all 0.66s ease;
+}
+
+#slide-show-cedre .nav:hover {
+    opacity: 1.0;
+}
+
+#slide-show-cedre .left {
+    left: 3%;
+    float: left;
+}
+
+#slide-show-cedre .right {
+    right: 3%;
+    float: right;
+}
+</style>
+
+
+<div id="slide-show-cedre">
+    <ol class="slides-list">
+                <li class="slide" style="background-image:url(https://lamasqueville.github.io/images/cedre/1.jpg);"></li>
+                <li class="slide" style="background-image:url(https://lamasqueville.github.io/images/cedre/2.jpg);"></li>
+                <li class="slide" style="background-image:url(https://lamasqueville.github.io/images/cedre/3.jpg);"></li>
+    </ol>
+    <span class="left nav fa fa-chevron-circle-left fa-3x"></span>
+    <span class="right nav fa fa-chevron-circle-right fa-3x"></span>
+</div>
+
+<script>
+sliderJQuery = jQuery.noConflict();
+sliderJQuery(function( $ ) {
+    $.global = new Object();
+    $.global.total = 0;
+
+    $(document).ready(function () {
+        var slideWindowWidth = $('#slide-show-cedre').width();
+        var slideCount = $('#slide-show-cedre ol li').length;
+        var totalSlidesWidth = slideCount * slideWindowWidth;
+        
+        $.global.item = 0;
+        $.global.total = slideCount;
+
+        function resize() {
+            slideWindowWidth = $('#slide-show-cedre').width();
+            slideCount = $('#slide-show-cedre ol li').length;
+            totalSlidesWidth = slideCount * slideWindowWidth;
+
+            $('#slide-show-cedre').css('height', slideWindowWidth + 'px');
+            $('#slide-show-cedre .slide').css('width', slideWindowWidth + 'px');
+            $('#slide-show-cedre .slide').css('height', slideWindowWidth + 'px');
+            $('#slide-show-cedre .slides-list').css('width', totalSlidesWidth + 'px');
+            $('#slide-show-cedre .slides-list').css('height', totalSlidesWidth + 'px');
+        }
+
+        resize();
+
+        $( window ).resize(function(){
+            resize();
+        });
+    
+        $('#slide-show-cedre .left').click(function () {
+            resetAutoSlide();
+            performSlide('back');
+        });
+
+        $('#slide-show-cedre .right').click(function () {
+            resetAutoSlide();
+            performSlide('forward');
+        });
+
+    });
+
+    function performSlide(direction) {
+        if (direction == 'back') {
+            var nextSlideId = $.global.item - 1;
+        }
+        if (direction == 'forward') {
+            var nextSlideId = $.global.item + 1;
+        }
+
+        if (nextSlideId == -1) {
+             
+            moveCss($.global.total - 1);
+        } else if (nextSlideId == $.global.total) {
+             
+            moveCss(0);
+        } else {
+             
+            moveCss(nextSlideId);
+        }
+    }
+
+    function moveCss(nextSlideId) {
+        var slideWindowWidth = $('#slide-show-cedre').width();
+        var margin = slideWindowWidth * nextSlideId;
+
+        $('#slide-show-cedre .slides-list').css('transform', 'translate3d(-' + margin + 'px,0px,0px)');
+
+        $.global.item = nextSlideId;
+    }
+
+    
+      var autoSlide = parseInt("0", 10);
+      var autoSlideInterval;
+      function resetAutoSlide(){
+        if(autoSlide) {
+          if(autoSlideInterval) {
+            clearInterval(autoSlideInterval);
+          }
+          autoSlideInterval = setInterval(function(){
+            performSlide('forward');
+          }, autoSlide)
+        }
+      }
+      resetAutoSlide();
+});
+</script>
 <p>Une belle chambre de 21 m²  pour deux personnes  avec porte fenêtre donnant accès à un balcon d&rsquo;où l&rsquo;on peut toucher du doigt notre magnifique cèdre centenaire.</p>
 <p>Équipée d' une literie de qualité  en 160×200 et d&rsquo;une salle de bains privée avec toilette et douche à l&rsquo;italienne.</p>
-
-
-<a style="margin-bottom: 5em" class="btn site-menu" data-title="nous contacter">Contactez nous pour réserver</a>
-
 <h4 id="tarifs-de-la-cèdre">Tarifs de la Cèdre</h4>
 <table>
 <thead>
@@ -164,7 +347,198 @@ vous accuillera pour les petit déjeuners.</p>
 </tr>
 </tbody>
 </table>
+
+
+<div class="btn-center">
+    <a style="margin-bottom: 5em" class="btn btn-cta site-menu" data-title="nous contacter">Contactez nous pour réserver</a>
+</div>
+
 <h3 id="la-tamaris">La Tamaris</h3>
+
+
+
+
+
+
+
+
+
+    
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
+
+
+
+<style>
+#slide-show-tamaris {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    top: 0px;
+    left: 0px;
+
+    margin: 50px 0;
+}
+
+#slide-show-tamaris .slides-list {
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    transform: translate3d(0px, 0px, 0px);
+    transition: all 0.66s ease;
+    -webkit-transition: all 0.66s ease;
+}
+
+#slide-show-tamaris .slide {
+    list-style: none;
+    position: relative;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 300px;
+    background: #ccc;
+    text-align: center;
+    line-height: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    color: #fff;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    -webkit-transform-style: preserve-3d;
+}
+
+#slide-show-tamaris .nav {
+    position: relative;
+    z-index: 9;
+    top: 45%;
+    cursor: pointer;
+    color: #fff;
+    opacity: 0.5;
+    transition: all 0.66s ease;
+    -webkit-transition: all 0.66s ease;
+}
+
+#slide-show-tamaris .nav:hover {
+    opacity: 1.0;
+}
+
+#slide-show-tamaris .left {
+    left: 3%;
+    float: left;
+}
+
+#slide-show-tamaris .right {
+    right: 3%;
+    float: right;
+}
+</style>
+
+
+<div id="slide-show-tamaris">
+    <ol class="slides-list">
+                <li class="slide" style="background-image:url(https://lamasqueville.github.io/images/tamaris/2.jpg);"></li>
+    </ol>
+    <span class="left nav fa fa-chevron-circle-left fa-3x"></span>
+    <span class="right nav fa fa-chevron-circle-right fa-3x"></span>
+</div>
+
+<script>
+sliderJQuery = jQuery.noConflict();
+sliderJQuery(function( $ ) {
+    $.global = new Object();
+    $.global.total = 0;
+
+    $(document).ready(function () {
+        var slideWindowWidth = $('#slide-show-tamaris').width();
+        var slideCount = $('#slide-show-tamaris ol li').length;
+        var totalSlidesWidth = slideCount * slideWindowWidth;
+        
+        $.global.item = 0;
+        $.global.total = slideCount;
+
+        function resize() {
+            slideWindowWidth = $('#slide-show-tamaris').width();
+            slideCount = $('#slide-show-tamaris ol li').length;
+            totalSlidesWidth = slideCount * slideWindowWidth;
+
+            $('#slide-show-tamaris').css('height', slideWindowWidth + 'px');
+            $('#slide-show-tamaris .slide').css('width', slideWindowWidth + 'px');
+            $('#slide-show-tamaris .slide').css('height', slideWindowWidth + 'px');
+            $('#slide-show-tamaris .slides-list').css('width', totalSlidesWidth + 'px');
+            $('#slide-show-tamaris .slides-list').css('height', totalSlidesWidth + 'px');
+        }
+
+        resize();
+
+        $( window ).resize(function(){
+            resize();
+        });
+    
+        $('#slide-show-tamaris .left').click(function () {
+            resetAutoSlide();
+            performSlide('back');
+        });
+
+        $('#slide-show-tamaris .right').click(function () {
+            resetAutoSlide();
+            performSlide('forward');
+        });
+
+    });
+
+    function performSlide(direction) {
+        if (direction == 'back') {
+            var nextSlideId = $.global.item - 1;
+        }
+        if (direction == 'forward') {
+            var nextSlideId = $.global.item + 1;
+        }
+
+        if (nextSlideId == -1) {
+             
+            moveCss($.global.total - 1);
+        } else if (nextSlideId == $.global.total) {
+             
+            moveCss(0);
+        } else {
+             
+            moveCss(nextSlideId);
+        }
+    }
+
+    function moveCss(nextSlideId) {
+        var slideWindowWidth = $('#slide-show-tamaris').width();
+        var margin = slideWindowWidth * nextSlideId;
+
+        $('#slide-show-tamaris .slides-list').css('transform', 'translate3d(-' + margin + 'px,0px,0px)');
+
+        $.global.item = nextSlideId;
+    }
+
+    
+      var autoSlide = parseInt("0", 10);
+      var autoSlideInterval;
+      function resetAutoSlide(){
+        if(autoSlide) {
+          if(autoSlideInterval) {
+            clearInterval(autoSlideInterval);
+          }
+          autoSlideInterval = setInterval(function(){
+            performSlide('forward');
+          }, autoSlide)
+        }
+      }
+      resetAutoSlide();
+});
+</script>
 <p>Une grande chambre de 29 m²  pour deux personnes seules ou en couple avec deux portes fenêtres donnant chacune accès à un balcon, un côté jardin, un autre côté rue avec vue mer.</p>
 <p>Pour la Tamaris, nous vous proposons une option triple avec lit bébé ou enfant jusque 12 ans ou chambre annexe au-delà de 12 ans.</p>
 <p>Équipée d&rsquo;une literie de qualité en 180x200 ou 2 lits simples en 90x 200 et d&rsquo;une grande salle de bains privée avec toilette et douche à l&rsquo;italienne.</p>
@@ -195,7 +569,9 @@ vous accuillera pour les petit déjeuners.</p>
 <p>Pour les enfants de plus de 12 ans nous disposons d&rsquo;une chambre annexe au tarif de 40€ petit déjeuner inclus.</p>
 
 
-<a class="btn site-menu booking" data-title="nous contacter">Contactez nous pour réserver</a>
+<div class="btn-center">
+    <a class="btn btn-cta site-menu booking" data-title="nous contacter">Contactez nous pour réserver</a>
+</div>
 
 </p>
                 </section>
