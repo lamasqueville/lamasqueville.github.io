@@ -198,9 +198,9 @@ vous accueillera pour les petit déjeuners.</p>
 }
 
 #slide-show-cedre .nav {
-    position: relative;
+    position: absolute;
     z-index: 9;
-    top: 45%;
+    top: 50%;
     cursor: pointer;
     color: #fff;
     opacity: 0.5;
@@ -253,11 +253,14 @@ sliderJQuery(function( $ ) {
             slideCount = $('#slide-show-cedre ol li').length;
             totalSlidesWidth = slideCount * slideWindowWidth;
 
-            $('#slide-show-cedre').css('height', slideWindowWidth + 'px');
+            var slideWindowHeight = Math.min(slideWindowWidth, $(window).height() - 50);
+
+            $('#slide-show-cedre').css('height', slideWindowHeight + 'px');
             $('#slide-show-cedre .slide').css('width', slideWindowWidth + 'px');
-            $('#slide-show-cedre .slide').css('height', slideWindowWidth + 'px');
+            $('#slide-show-cedre .slide').css('height', slideWindowHeight + 'px');
             $('#slide-show-cedre .slides-list').css('width', totalSlidesWidth + 'px');
-            $('#slide-show-cedre .slides-list').css('height', totalSlidesWidth + 'px');
+            $('#slide-show-cedre').css('height', slideWindowHeight + 'px');
+            moveCss($.global.item);
         }
 
         resize();
@@ -416,9 +419,9 @@ sliderJQuery(function( $ ) {
 }
 
 #slide-show-tamaris .nav {
-    position: relative;
+    position: absolute;
     z-index: 9;
-    top: 45%;
+    top: 50%;
     cursor: pointer;
     color: #fff;
     opacity: 0.5;
@@ -469,11 +472,14 @@ sliderJQuery(function( $ ) {
             slideCount = $('#slide-show-tamaris ol li').length;
             totalSlidesWidth = slideCount * slideWindowWidth;
 
-            $('#slide-show-tamaris').css('height', slideWindowWidth + 'px');
+            var slideWindowHeight = Math.min(slideWindowWidth, $(window).height() - 50);
+
+            $('#slide-show-tamaris').css('height', slideWindowHeight + 'px');
             $('#slide-show-tamaris .slide').css('width', slideWindowWidth + 'px');
-            $('#slide-show-tamaris .slide').css('height', slideWindowWidth + 'px');
+            $('#slide-show-tamaris .slide').css('height', slideWindowHeight + 'px');
             $('#slide-show-tamaris .slides-list').css('width', totalSlidesWidth + 'px');
-            $('#slide-show-tamaris .slides-list').css('height', totalSlidesWidth + 'px');
+            $('#slide-show-tamaris').css('height', slideWindowHeight + 'px');
+            moveCss($.global.item);
         }
 
         resize();
@@ -587,7 +593,7 @@ sliderJQuery(function( $ ) {
                 <section class="post-content">
                     <p><p><img src="images/garden.jpg" alt="Le jardin"></p>
 <p>La Masqueville, une vieille bâtisse dont les dernières archives connues remontent à la fin du 19eme (1875), témoin d&rsquo;un passif aultois mouvementé.</p>
-<p>Très certainement à l&rsquo;origine un relais pour cheveaux de calèche, tantôt habilitée en tant que couvent pour des religieuses puis occupée durant la seconde guerre.</p>
+<p>Très certainement à l&rsquo;origine un relais pour chevaux de calèche, tantôt habilitée en tant que couvent pour des religieuses puis occupée durant la seconde guerre.</p>
 <p>Elle est devenue, après guerre, un lieu de villégiature dans la vague des villas balnéaires de l&rsquo;époque sur le littoral.</p>
 </p>
                 </section>
