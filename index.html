@@ -105,7 +105,194 @@
                     <h2 class="post-title" id="accueil">Accueil</h2>
                 </header>
                 <section class="post-content">
-                    <p><p><img src="images/living-room.jpg" alt="Le salon"></p>
+                    <p>
+
+
+
+
+
+
+
+
+    
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
+
+
+
+<style>
+#slide-show-opener {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    top: 0px;
+    left: 0px;
+
+    margin: 50px 0;
+}
+
+#slide-show-opener .slides-list {
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    transform: translate3d(0px, 0px, 0px);
+    transition: all 0.66s ease;
+    -webkit-transition: all 0.66s ease;
+}
+
+#slide-show-opener .slide {
+    list-style: none;
+    position: relative;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 300px;
+    background: #ccc;
+    text-align: center;
+    line-height: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    color: #fff;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    -webkit-transform-style: preserve-3d;
+}
+
+#slide-show-opener .nav {
+    position: absolute;
+    z-index: 9;
+    top: 45%;
+    cursor: pointer;
+    color: #fff;
+    opacity: 0.5;
+    transition: all 0.66s ease;
+    -webkit-transition: all 0.66s ease;
+}
+
+#slide-show-opener .nav:hover {
+    opacity: 1.0;
+}
+
+#slide-show-opener .left {
+    left: 3%;
+    float: left;
+}
+
+#slide-show-opener .right {
+    right: 3%;
+    float: right;
+}
+</style>
+
+
+<div id="slide-show-opener">
+    <ol class="slides-list">
+                <li class="slide" style="background-image:url(https://lamasqueville.github.io/images/opener/1.jpg);"></li>
+    </ol>
+    <span class="left nav fa fa-chevron-circle-left fa-3x"></span>
+    <span class="right nav fa fa-chevron-circle-right fa-3x"></span>
+</div>
+
+<script>
+sliderJQuery = jQuery.noConflict();
+sliderJQuery(function( $ ) {
+    $.global = new Object();
+    $.global.total = 0;
+
+    $(document).ready(function () {
+        var slideWindowWidth = $('#slide-show-opener').width();
+        var slideCount = $('#slide-show-opener ol li').length;
+        var totalSlidesWidth = slideCount * slideWindowWidth;
+        
+        $.global.item = 0;
+        $.global.total = slideCount;
+
+        function resize() {
+            slideWindowWidth = $('#slide-show-opener').width();
+            slideCount = $('#slide-show-opener ol li').length;
+            totalSlidesWidth = slideCount * slideWindowWidth;
+
+            var slideWindowHeight = Math.min(slideWindowWidth, $(window).height() - 50);
+
+            $('#slide-show-opener').css('height', slideWindowHeight + 'px');
+            $('#slide-show-opener .slide').css('width', slideWindowWidth + 'px');
+            $('#slide-show-opener .slide').css('height', slideWindowHeight + 'px');
+            $('#slide-show-opener .slides-list').css('width', totalSlidesWidth + 'px');
+            $('#slide-show-opener').css('height', slideWindowHeight + 'px');
+            moveCss($.global.item);
+        }
+
+        resize();
+
+        $( window ).resize(function(){
+            resize();
+        });
+    
+        $('#slide-show-opener .left').click(function () {
+            resetAutoSlide();
+            performSlide('back');
+        });
+
+        $('#slide-show-opener .right').click(function () {
+            resetAutoSlide();
+            performSlide('forward');
+        });
+
+    });
+
+    function performSlide(direction) {
+        if (direction == 'back') {
+            var nextSlideId = $.global.item - 1;
+        }
+        if (direction == 'forward') {
+            var nextSlideId = $.global.item + 1;
+        }
+
+        if (nextSlideId == -1) {
+             
+            moveCss($.global.total - 1);
+        } else if (nextSlideId == $.global.total) {
+             
+            moveCss(0);
+        } else {
+             
+            moveCss(nextSlideId);
+        }
+    }
+
+    function moveCss(nextSlideId) {
+        var slideWindowWidth = $('#slide-show-opener').width();
+        var margin = slideWindowWidth * nextSlideId;
+
+        $('#slide-show-opener .slides-list').css('transform', 'translate3d(-' + margin + 'px,0px,0px)');
+
+        $.global.item = nextSlideId;
+    }
+
+    
+      var autoSlide = parseInt("0", 10);
+      var autoSlideInterval;
+      function resetAutoSlide(){
+        if(autoSlide) {
+          if(autoSlideInterval) {
+            clearInterval(autoSlideInterval);
+          }
+          autoSlideInterval = setInterval(function(){
+            performSlide('forward');
+          }, autoSlide)
+        }
+      }
+      resetAutoSlide();
+});
+</script>
 <p>Venez goûter au calme et à l&rsquo;étendue de nos belles plages de la côte Picarde, entre Somme et Seine-Maritime.</p>
 <p>A Ault, une petite ville côtière, située dans une valleuse entre Terre et mer.
 Laissez vos yeux chavirer devant ces paysages  naturels et vertigineux.
@@ -548,7 +735,6 @@ sliderJQuery(function( $ ) {
 });
 </script>
 <p>Une grande chambre de 29 m²  pour deux personnes seules ou en couple avec deux portes fenêtres donnant chacune accès à un balcon, un côté jardin, un autre côté rue avec vue mer.</p>
-<p>Pour la Tamaris, nous vous proposons une option triple avec lit bébé ou enfant jusque 12 ans ou chambre annexe au-delà de 12 ans.</p>
 <p>Équipée d&rsquo;une literie de qualité en 180x200 ou 2 lits simples en 90x 200 et d&rsquo;une grande salle de bains privée avec toilette et douche à l&rsquo;italienne.</p>
 <h4 id="tarifs-de-la-tamaris">Tarifs de la Tamaris</h4>
 <table>
@@ -594,7 +780,194 @@ sliderJQuery(function( $ ) {
                     <h2 class="post-title" id="la-maison">La maison</h2>
                 </header>
                 <section class="post-content">
-                    <p><p><img src="images/garden.jpg" alt="Le jardin"></p>
+                    <p>
+
+
+
+
+
+
+
+
+    
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
+
+
+
+<style>
+#slide-show-house {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    top: 0px;
+    left: 0px;
+
+    margin: 50px 0;
+}
+
+#slide-show-house .slides-list {
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    transform: translate3d(0px, 0px, 0px);
+    transition: all 0.66s ease;
+    -webkit-transition: all 0.66s ease;
+}
+
+#slide-show-house .slide {
+    list-style: none;
+    position: relative;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 300px;
+    background: #ccc;
+    text-align: center;
+    line-height: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    color: #fff;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    -webkit-transform-style: preserve-3d;
+}
+
+#slide-show-house .nav {
+    position: absolute;
+    z-index: 9;
+    top: 45%;
+    cursor: pointer;
+    color: #fff;
+    opacity: 0.5;
+    transition: all 0.66s ease;
+    -webkit-transition: all 0.66s ease;
+}
+
+#slide-show-house .nav:hover {
+    opacity: 1.0;
+}
+
+#slide-show-house .left {
+    left: 3%;
+    float: left;
+}
+
+#slide-show-house .right {
+    right: 3%;
+    float: right;
+}
+</style>
+
+
+<div id="slide-show-house">
+    <ol class="slides-list">
+                <li class="slide" style="background-image:url(https://lamasqueville.github.io/images/house/1.jpg);"></li>
+    </ol>
+    <span class="left nav fa fa-chevron-circle-left fa-3x"></span>
+    <span class="right nav fa fa-chevron-circle-right fa-3x"></span>
+</div>
+
+<script>
+sliderJQuery = jQuery.noConflict();
+sliderJQuery(function( $ ) {
+    $.global = new Object();
+    $.global.total = 0;
+
+    $(document).ready(function () {
+        var slideWindowWidth = $('#slide-show-house').width();
+        var slideCount = $('#slide-show-house ol li').length;
+        var totalSlidesWidth = slideCount * slideWindowWidth;
+        
+        $.global.item = 0;
+        $.global.total = slideCount;
+
+        function resize() {
+            slideWindowWidth = $('#slide-show-house').width();
+            slideCount = $('#slide-show-house ol li').length;
+            totalSlidesWidth = slideCount * slideWindowWidth;
+
+            var slideWindowHeight = Math.min(slideWindowWidth, $(window).height() - 50);
+
+            $('#slide-show-house').css('height', slideWindowHeight + 'px');
+            $('#slide-show-house .slide').css('width', slideWindowWidth + 'px');
+            $('#slide-show-house .slide').css('height', slideWindowHeight + 'px');
+            $('#slide-show-house .slides-list').css('width', totalSlidesWidth + 'px');
+            $('#slide-show-house').css('height', slideWindowHeight + 'px');
+            moveCss($.global.item);
+        }
+
+        resize();
+
+        $( window ).resize(function(){
+            resize();
+        });
+    
+        $('#slide-show-house .left').click(function () {
+            resetAutoSlide();
+            performSlide('back');
+        });
+
+        $('#slide-show-house .right').click(function () {
+            resetAutoSlide();
+            performSlide('forward');
+        });
+
+    });
+
+    function performSlide(direction) {
+        if (direction == 'back') {
+            var nextSlideId = $.global.item - 1;
+        }
+        if (direction == 'forward') {
+            var nextSlideId = $.global.item + 1;
+        }
+
+        if (nextSlideId == -1) {
+             
+            moveCss($.global.total - 1);
+        } else if (nextSlideId == $.global.total) {
+             
+            moveCss(0);
+        } else {
+             
+            moveCss(nextSlideId);
+        }
+    }
+
+    function moveCss(nextSlideId) {
+        var slideWindowWidth = $('#slide-show-house').width();
+        var margin = slideWindowWidth * nextSlideId;
+
+        $('#slide-show-house .slides-list').css('transform', 'translate3d(-' + margin + 'px,0px,0px)');
+
+        $.global.item = nextSlideId;
+    }
+
+    
+      var autoSlide = parseInt("0", 10);
+      var autoSlideInterval;
+      function resetAutoSlide(){
+        if(autoSlide) {
+          if(autoSlideInterval) {
+            clearInterval(autoSlideInterval);
+          }
+          autoSlideInterval = setInterval(function(){
+            performSlide('forward');
+          }, autoSlide)
+        }
+      }
+      resetAutoSlide();
+});
+</script>
 <p>La Masqueville, une vieille bâtisse dont les dernières archives connues remontent à la fin du 19eme (1875), témoin d&rsquo;un passif aultois mouvementé.</p>
 <p>Très certainement à l&rsquo;origine un relais pour chevaux de calèche, tantôt habilitée en tant que couvent pour des religieuses puis occupée durant la seconde guerre.</p>
 <p>Elle est devenue, après guerre, un lieu de villégiature dans la vague des villas balnéaires de l&rsquo;époque sur le littoral.</p>
@@ -610,7 +983,194 @@ sliderJQuery(function( $ ) {
                     <h2 class="post-title" id="les-environs">Les environs</h2>
                 </header>
                 <section class="post-content">
-                    <p><p><img src="images/sea-view.jpg" alt="Le front de mer"></p>
+                    <p>
+
+
+
+
+
+
+
+
+    
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
+
+
+
+<style>
+#slide-show-around {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    top: 0px;
+    left: 0px;
+
+    margin: 50px 0;
+}
+
+#slide-show-around .slides-list {
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    transform: translate3d(0px, 0px, 0px);
+    transition: all 0.66s ease;
+    -webkit-transition: all 0.66s ease;
+}
+
+#slide-show-around .slide {
+    list-style: none;
+    position: relative;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 300px;
+    background: #ccc;
+    text-align: center;
+    line-height: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    color: #fff;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    -webkit-transform-style: preserve-3d;
+}
+
+#slide-show-around .nav {
+    position: absolute;
+    z-index: 9;
+    top: 45%;
+    cursor: pointer;
+    color: #fff;
+    opacity: 0.5;
+    transition: all 0.66s ease;
+    -webkit-transition: all 0.66s ease;
+}
+
+#slide-show-around .nav:hover {
+    opacity: 1.0;
+}
+
+#slide-show-around .left {
+    left: 3%;
+    float: left;
+}
+
+#slide-show-around .right {
+    right: 3%;
+    float: right;
+}
+</style>
+
+
+<div id="slide-show-around">
+    <ol class="slides-list">
+                <li class="slide" style="background-image:url(https://lamasqueville.github.io/images/around/1.jpg);"></li>
+    </ol>
+    <span class="left nav fa fa-chevron-circle-left fa-3x"></span>
+    <span class="right nav fa fa-chevron-circle-right fa-3x"></span>
+</div>
+
+<script>
+sliderJQuery = jQuery.noConflict();
+sliderJQuery(function( $ ) {
+    $.global = new Object();
+    $.global.total = 0;
+
+    $(document).ready(function () {
+        var slideWindowWidth = $('#slide-show-around').width();
+        var slideCount = $('#slide-show-around ol li').length;
+        var totalSlidesWidth = slideCount * slideWindowWidth;
+        
+        $.global.item = 0;
+        $.global.total = slideCount;
+
+        function resize() {
+            slideWindowWidth = $('#slide-show-around').width();
+            slideCount = $('#slide-show-around ol li').length;
+            totalSlidesWidth = slideCount * slideWindowWidth;
+
+            var slideWindowHeight = Math.min(slideWindowWidth, $(window).height() - 50);
+
+            $('#slide-show-around').css('height', slideWindowHeight + 'px');
+            $('#slide-show-around .slide').css('width', slideWindowWidth + 'px');
+            $('#slide-show-around .slide').css('height', slideWindowHeight + 'px');
+            $('#slide-show-around .slides-list').css('width', totalSlidesWidth + 'px');
+            $('#slide-show-around').css('height', slideWindowHeight + 'px');
+            moveCss($.global.item);
+        }
+
+        resize();
+
+        $( window ).resize(function(){
+            resize();
+        });
+    
+        $('#slide-show-around .left').click(function () {
+            resetAutoSlide();
+            performSlide('back');
+        });
+
+        $('#slide-show-around .right').click(function () {
+            resetAutoSlide();
+            performSlide('forward');
+        });
+
+    });
+
+    function performSlide(direction) {
+        if (direction == 'back') {
+            var nextSlideId = $.global.item - 1;
+        }
+        if (direction == 'forward') {
+            var nextSlideId = $.global.item + 1;
+        }
+
+        if (nextSlideId == -1) {
+             
+            moveCss($.global.total - 1);
+        } else if (nextSlideId == $.global.total) {
+             
+            moveCss(0);
+        } else {
+             
+            moveCss(nextSlideId);
+        }
+    }
+
+    function moveCss(nextSlideId) {
+        var slideWindowWidth = $('#slide-show-around').width();
+        var margin = slideWindowWidth * nextSlideId;
+
+        $('#slide-show-around .slides-list').css('transform', 'translate3d(-' + margin + 'px,0px,0px)');
+
+        $.global.item = nextSlideId;
+    }
+
+    
+      var autoSlide = parseInt("0", 10);
+      var autoSlideInterval;
+      function resetAutoSlide(){
+        if(autoSlide) {
+          if(autoSlideInterval) {
+            clearInterval(autoSlideInterval);
+          }
+          autoSlideInterval = setInterval(function(){
+            performSlide('forward');
+          }, autoSlide)
+        }
+      }
+      resetAutoSlide();
+});
+</script>
 <h3 id="a-pied">A pied</h3>
 <p>L&rsquo;office de tourisme et la bibliotheque à quelques pas de la maison.</p>
 <p>La Mer, la grand rue ses commerces cafés et restaurants, son marché.</p>
@@ -670,7 +1230,7 @@ villas Belle Époque.</p>
         </div>
     
         <div class='post-holder'>
-            <article class='post last'>
+            <article class='post '>
                 <header class="post-header">
                     <h2 class="post-title" id="mesures-covid">Mesures Covid</h2>
                 </header>
@@ -678,6 +1238,18 @@ villas Belle Époque.</p>
                     <p><p>Du gel hydroacoolique est à votre disposition dans les chambres et parties communes.</p>
 <p>Pour palier à la fermeture des commerces de restaurations, nous vous offrons <a href="#nous-contacter">sur demande</a> plusieurs dispositifs pour vous permettre de prendre vos repas.</p>
 </p>
+                </section>
+            </article>
+            <div class='post-after'></div>
+        </div>
+    
+        <div class='post-holder'>
+            <article class='post last'>
+                <header class="post-header">
+                    <h2 class="post-title" id=""></h2>
+                </header>
+                <section class="post-content">
+                    <p></p>
                 </section>
             </article>
             <div class='post-after'></div>
