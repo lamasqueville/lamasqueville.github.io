@@ -521,9 +521,6 @@
        background: #fff;
        position: relative;
    }
-   .post-holder.odd {
-
-   }
    
    /* Every post, on every page, gets this style on its <article> tag */
    .post {

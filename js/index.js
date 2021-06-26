@@ -9,18 +9,25 @@ var $fnav = $('.fixed-nav');
 var $postholder = $('.post-holder');
 var $sitehead = $('#site-head');
 
+function computeScrollSpeed(src, dest) {
+ return Math.abs(src - dest) / 5;
+}
+
 /* Globals jQuery, document */
 (function ($) {
 	"use strict";
-	function srcTo (el) {
+	function srcTo (el, src = 0) {
+		var dest = el.offset().top;
+
 		$('html, body').animate({
 			scrollTop: el.offset().top
-		}, 1000);
+		}, computeScrollSpeed(src, dest));
 	}
-	function srcToAnchorWithTitle (str) {
+
+	function srcToAnchorWithTitle (str, e) {
 		var $el = $('#' + str);
 		if ($el.length) {
-			srcTo($el);
+			srcTo($el, e.pageY);
 		}
 	}
 	$(document).ready(function(){
@@ -31,26 +38,22 @@ var $sitehead = $('#site-head');
 		});
 
 		$('a.btn.site-menu').click(function (e) {
-			srcToAnchorWithTitle($(e.target).data('title').toLowerCase().split(' ').join('-'));
-		});
-		
-		$('#header-arrow').click(function () {
-			srcTo($first);
+			srcToAnchorWithTitle($(e.target).data('title').toLowerCase().split(' ').join('-'), e);
 		});
 
 		$('.post-title').each(function () {
 			var t = $(this).text();
-			var id = $(this).attr("id");
 			var index = $(this).parents('.post-holder').index();
 			$fnav.append("<a class='fn-item fn-item--" + index +"' item_index='"+index+"'>"+t+"</a>")
 			$(this).parents('article').attr('id',t.toLowerCase().split(' ').join('-'));
-			$('.fn-item--' + index).click(function () {
+			$('.fn-item--' + index).click(function (e) {
 				var i = $(this).attr('item_index');
 				var s = $(".post[item_index='"+i+"']");
 
+				var src = e.pageY, dest = s.offset().top;
 				$('html, body').animate({
-					scrollTop: s.offset().top
-				}, 400);
+					scrollTop: dest
+				}, computeScrollSpeed(src, dest), "linear");
 			});
 		});
 
