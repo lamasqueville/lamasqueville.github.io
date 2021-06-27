@@ -249,7 +249,6 @@ sliderJQuery(function( $ ) {
 
     function performSlide(direction) {
 
-        
         if (direction == 'back') {
             var nextSlideId = $.global.item - 1;
         }
@@ -298,45 +297,6 @@ sliderJQuery(function( $ ) {
       resetAutoSlide();
 
       
-      var touchsurface = document.getElementById("slide-show-opener"),
-        startX,
-        startY,
-        dist,
-        threshold = 300, 
-        allowedTime = 200, 
-        elapsedTime,
-        startTime
- 
-    function handleswipe(isrightswipe){
-        if (isrightswipe)
-            $("#slide-show-opener-arrow-left").click()
-        else{
-            $("#slide-show-opener-arrow-right").click()
-        }
-    }
- 
-    touchsurface.addEventListener('touchstart', function(e){
-        var touchobj = e.changedTouches[0]
-        dist = 0
-        startX = touchobj.pageX
-        startY = touchobj.pageY
-        startTime = new Date().getTime() 
-        e.preventDefault()
-    }, false)
- 
-    touchsurface.addEventListener('touchmove', function(e){
-        e.preventDefault() 
-    }, false)
- 
-    touchsurface.addEventListener('touchend', function(e){
-        var touchobj = e.changedTouches[0]
-        dist = touchobj.pageX - startX 
-        elapsedTime = new Date().getTime() - startTime 
-       
-        var swiperightBol = (elapsedTime <= allowedTime && dist >= threshold && Math.abs(touchobj.pageY - startY) <= 100)
-        handleswipe(swiperightBol)
-        e.preventDefault()
-    }, false)
 });
 </script>
 <p>Venez goûter au calme et à l&rsquo;étendue de nos belles plages de la côte Picarde, entre Somme et Seine-Maritime.</p>
@@ -517,7 +477,6 @@ sliderJQuery(function( $ ) {
 
     function performSlide(direction) {
 
-        
         if (direction == 'back') {
             var nextSlideId = $.global.item - 1;
         }
@@ -565,6 +524,7 @@ sliderJQuery(function( $ ) {
       }
       resetAutoSlide();
 
+      
       
       var touchsurface = document.getElementById("slide-show-cedre"),
         startX,
@@ -787,7 +747,6 @@ sliderJQuery(function( $ ) {
 
     function performSlide(direction) {
 
-        
         if (direction == 'back') {
             var nextSlideId = $.global.item - 1;
         }
@@ -835,6 +794,7 @@ sliderJQuery(function( $ ) {
       }
       resetAutoSlide();
 
+      
       
       var touchsurface = document.getElementById("slide-show-tamaris"),
         startX,
@@ -1066,7 +1026,6 @@ sliderJQuery(function( $ ) {
 
     function performSlide(direction) {
 
-        
         if (direction == 'back') {
             var nextSlideId = $.global.item - 1;
         }
@@ -1115,45 +1074,6 @@ sliderJQuery(function( $ ) {
       resetAutoSlide();
 
       
-      var touchsurface = document.getElementById("slide-show-house"),
-        startX,
-        startY,
-        dist,
-        threshold = 300, 
-        allowedTime = 200, 
-        elapsedTime,
-        startTime
- 
-    function handleswipe(isrightswipe){
-        if (isrightswipe)
-            $("#slide-show-house-arrow-left").click()
-        else{
-            $("#slide-show-house-arrow-right").click()
-        }
-    }
- 
-    touchsurface.addEventListener('touchstart', function(e){
-        var touchobj = e.changedTouches[0]
-        dist = 0
-        startX = touchobj.pageX
-        startY = touchobj.pageY
-        startTime = new Date().getTime() 
-        e.preventDefault()
-    }, false)
- 
-    touchsurface.addEventListener('touchmove', function(e){
-        e.preventDefault() 
-    }, false)
- 
-    touchsurface.addEventListener('touchend', function(e){
-        var touchobj = e.changedTouches[0]
-        dist = touchobj.pageX - startX 
-        elapsedTime = new Date().getTime() - startTime 
-       
-        var swiperightBol = (elapsedTime <= allowedTime && dist >= threshold && Math.abs(touchobj.pageY - startY) <= 100)
-        handleswipe(swiperightBol)
-        e.preventDefault()
-    }, false)
 });
 </script>
 <p>La Masqueville, une vieille bâtisse dont les dernières archives connues remontent à la fin du 19eme (1875), témoin d&rsquo;un passif aultois mouvementé.</p>
@@ -1314,7 +1234,6 @@ sliderJQuery(function( $ ) {
 
     function performSlide(direction) {
 
-        
         if (direction == 'back') {
             var nextSlideId = $.global.item - 1;
         }
@@ -1363,45 +1282,6 @@ sliderJQuery(function( $ ) {
       resetAutoSlide();
 
       
-      var touchsurface = document.getElementById("slide-show-around"),
-        startX,
-        startY,
-        dist,
-        threshold = 300, 
-        allowedTime = 200, 
-        elapsedTime,
-        startTime
- 
-    function handleswipe(isrightswipe){
-        if (isrightswipe)
-            $("#slide-show-around-arrow-left").click()
-        else{
-            $("#slide-show-around-arrow-right").click()
-        }
-    }
- 
-    touchsurface.addEventListener('touchstart', function(e){
-        var touchobj = e.changedTouches[0]
-        dist = 0
-        startX = touchobj.pageX
-        startY = touchobj.pageY
-        startTime = new Date().getTime() 
-        e.preventDefault()
-    }, false)
- 
-    touchsurface.addEventListener('touchmove', function(e){
-        e.preventDefault() 
-    }, false)
- 
-    touchsurface.addEventListener('touchend', function(e){
-        var touchobj = e.changedTouches[0]
-        dist = touchobj.pageX - startX 
-        elapsedTime = new Date().getTime() - startTime 
-       
-        var swiperightBol = (elapsedTime <= allowedTime && dist >= threshold && Math.abs(touchobj.pageY - startY) <= 100)
-        handleswipe(swiperightBol)
-        e.preventDefault()
-    }, false)
 });
 </script>
 <h3 id="a-pied">A pied</h3>
