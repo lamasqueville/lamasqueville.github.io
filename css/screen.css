@@ -74,7 +74,9 @@
        content: "\e004";
    }
    
-   
+   .post-holder {
+       margin-top: -1em;
+   }
    /* ==========================================================================
       2. General - Setting up some base styles
       ========================================================================== */
@@ -927,7 +929,7 @@
            margin-left: 0;
        }
        .post-holder {
-           padding-top: 20px;
+           padding-top: 0;
        }
        #site-head {
            -webkit-box-sizing: border-box;
