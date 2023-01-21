@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-	<meta name="generator" content="Hugo 0.81.0" /><meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+	<meta name="generator" content="Hugo 0.110.0"><meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 <title>La Masqueville - Chambres d&#39;hôtes</title>
@@ -25,7 +25,6 @@
 <meta property="og:description" content="Entre baie de Somme et falaises de Normandie, laissez vous transporter par le charme de nos chambres d&#39;hôtes dans une maison de caractère" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://lamasqueville.github.io/" /><meta property="og:image" content="https://lamasqueville.github.io/images/cover-image.webp"/>
-
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://lamasqueville.github.io/images/cover-image.webp"/>
@@ -70,7 +69,9 @@
   
 </script>
 
-<meta http-equiv='content-language' content='fr '></head>
+<meta http-equiv='content-language' content='fr '>
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+</head>
     <body>
 
 
@@ -95,18 +96,18 @@
 
 </header>
 <main class="content" role="main">
+
     <div class='fixed-nav'>
     </div>
     
         <div class='post-holder'>
             <article class='post first'>
-             
-                <header class="post-header"    >
+                <header class="post-header">
                     <h2 class="post-title" id="accueil">Accueil</h2>
                 </header>
-            
                 <section class="post-content">
                     <p>
+
 
 
 
@@ -126,8 +127,6 @@
 
 <style>
 #slide-show-opener {
-    -webkit-tap-highlight-color: transparent;
-
     position: relative;
     width: 100%;
     height: 300px;
@@ -135,7 +134,7 @@
     top: 0px;
     left: 0px;
 
-    margin: 1.5em 0;
+    margin: 50px 0;
 }
 
 #slide-show-opener .slides-list {
@@ -199,8 +198,8 @@
     <ol class="slides-list">
                 <li class="slide" style="background-image:url(https://lamasqueville.github.io/images/opener/1.jpg);"></li>
     </ol>
-    <span id="slide-show-opener-arrow-left" class="left nav fa  fa-3x"></span>
-    <span id="slide-show-opener-arrow-right" class="right nav fa  fa-3x"></span>
+    <span class="left nav fa fa-chevron-circle-left fa-3x"></span>
+    <span class="right nav fa fa-chevron-circle-right fa-3x"></span>
 </div>
 
 <script>
@@ -251,17 +250,12 @@ sliderJQuery(function( $ ) {
     });
 
     function performSlide(direction) {
-
         if (direction == 'back') {
             var nextSlideId = $.global.item - 1;
         }
         if (direction == 'forward') {
             var nextSlideId = $.global.item + 1;
         }
-        console.log(direction, nextSlideId)
-
-        
-        
 
         if (nextSlideId == -1) {
              
@@ -315,27 +309,21 @@ Ici, les maisons touchent en un même temps le ciel et les flots.</p>
 </div>
 
 <p>La maison met à votre entière disposition un grand salon, salle à manger avec cheminée. Cette pièce de vie traversante entre le jardin et une verrière côté cour
-vous accueillera pour les petit déjeuners et dîners.</p>
+vous accueillera pour les petit déjeuners.</p>
 <p>Vous disposerez d&rsquo;un accès direct au jardin ainsi que d&rsquo;un espace bar avec café et thé à discrétion.</p>
-<p>Nous accordons un soin particulier au service des petits déjeuners et prenons grand plaisir à vous faire découvrir les produits du terroir, frais de saison et bios dans la mesure du possible. Vous pourrez déguster chaque matin notre pain au levain naturel et notre brioche maison accompagnés de confitures de notre jardin et des oeufs de nos poulettes.</p>
-<p>A l&rsquo;image de la maison la table des petits déjeuners est dressée pour le plaisir des yeux avec une vaisselle d&rsquo;époque raffinée.</p>
 </p>
                 </section>
             </article>
+            <div class='post-after'></div>
         </div>
     
         <div class='post-holder'>
             <article class='post '>
-             
-                <header class="post-header"     style="display:none;" >
+                <header class="post-header">
                     <h2 class="post-title" id="nos-chambres">Nos chambres</h2>
                 </header>
-            
                 <section class="post-content">
                     <p><h3 id="la-cèdre">La Cèdre</h3>
-<p>Une belle chambre de 21 m²  pour deux personnes  avec porte fenêtre donnant accès à un balcon d&rsquo;où l&rsquo;on peut toucher du doigt notre magnifique cèdre centenaire.</p>
-
-
 
 
 
@@ -357,8 +345,6 @@ vous accueillera pour les petit déjeuners et dîners.</p>
 
 <style>
 #slide-show-cedre {
-    -webkit-tap-highlight-color: transparent;
-
     position: relative;
     width: 100%;
     height: 300px;
@@ -366,7 +352,7 @@ vous accueillera pour les petit déjeuners et dîners.</p>
     top: 0px;
     left: 0px;
 
-    margin: 1.5em 0;
+    margin: 50px 0;
 }
 
 #slide-show-cedre .slides-list {
@@ -432,8 +418,8 @@ vous accueillera pour les petit déjeuners et dîners.</p>
                 <li class="slide" style="background-image:url(https://lamasqueville.github.io/images/cedre/2.jpg);"></li>
                 <li class="slide" style="background-image:url(https://lamasqueville.github.io/images/cedre/3.jpg);"></li>
     </ol>
-    <span id="slide-show-cedre-arrow-left" class="left nav fa fa-chevron-circle-left fa-3x"></span>
-    <span id="slide-show-cedre-arrow-right" class="right nav fa fa-chevron-circle-right fa-3x"></span>
+    <span class="left nav fa fa-chevron-circle-left fa-3x"></span>
+    <span class="right nav fa fa-chevron-circle-right fa-3x"></span>
 </div>
 
 <script>
@@ -484,17 +470,12 @@ sliderJQuery(function( $ ) {
     });
 
     function performSlide(direction) {
-
         if (direction == 'back') {
             var nextSlideId = $.global.item - 1;
         }
         if (direction == 'forward') {
             var nextSlideId = $.global.item + 1;
         }
-        console.log(direction, nextSlideId)
-
-        
-        
 
         if (nextSlideId == -1) {
              
@@ -533,7 +514,8 @@ sliderJQuery(function( $ ) {
       resetAutoSlide();
 });
 </script>
-<p>Équipée d' une literie de qualité  en 160×200 et d&rsquo;une salle de bains privée avec toilette et douche à l&rsquo;italienne.</p>
+<p>Une belle chambre de 21 m²  pour deux personnes  avec porte fenêtre donnant accès à un balcon d&rsquo;où l&rsquo;on peut toucher du doigt notre magnifique cèdre centenaire.</p>
+<p>Équipée d&rsquo; une literie de qualité  en 160×200 et d&rsquo;une salle de bains privée avec toilette et douche à l&rsquo;italienne.</p>
 <h4 id="tarifs-de-la-cèdre">Tarifs de la Cèdre</h4>
 <table>
 <thead>
@@ -546,13 +528,13 @@ sliderJQuery(function( $ ) {
 <tbody>
 <tr>
 <td>Inférieure à 3 nuitées</td>
-<td>100 €</td>
-<td>120 €</td>
+<td>130 €</td>
+<td>145 €</td>
 </tr>
 <tr>
 <td>A partir de 3 nuitées</td>
-<td>90 €</td>
-<td>110 €</td>
+<td>115 €</td>
+<td>130 €</td>
 </tr>
 </tbody>
 </table>
@@ -565,9 +547,6 @@ sliderJQuery(function( $ ) {
 </div>
 
 <h3 id="la-tamaris">La Tamaris</h3>
-<p>Une grande chambre de 29 m²  pour deux personnes seules ou en couple avec deux portes fenêtres donnant chacune accès à un balcon, un côté jardin, un autre côté rue avec vue mer.</p>
-
-
 
 
 
@@ -589,8 +568,6 @@ sliderJQuery(function( $ ) {
 
 <style>
 #slide-show-tamaris {
-    -webkit-tap-highlight-color: transparent;
-
     position: relative;
     width: 100%;
     height: 300px;
@@ -598,7 +575,7 @@ sliderJQuery(function( $ ) {
     top: 0px;
     left: 0px;
 
-    margin: 1.5em 0;
+    margin: 50px 0;
 }
 
 #slide-show-tamaris .slides-list {
@@ -662,8 +639,8 @@ sliderJQuery(function( $ ) {
     <ol class="slides-list">
                 <li class="slide" style="background-image:url(https://lamasqueville.github.io/images/tamaris/2.jpg);"></li>
     </ol>
-    <span id="slide-show-tamaris-arrow-left" class="left nav fa fa-chevron-circle-left fa-3x"></span>
-    <span id="slide-show-tamaris-arrow-right" class="right nav fa fa-chevron-circle-right fa-3x"></span>
+    <span class="left nav fa fa-chevron-circle-left fa-3x"></span>
+    <span class="right nav fa fa-chevron-circle-right fa-3x"></span>
 </div>
 
 <script>
@@ -714,17 +691,12 @@ sliderJQuery(function( $ ) {
     });
 
     function performSlide(direction) {
-
         if (direction == 'back') {
             var nextSlideId = $.global.item - 1;
         }
         if (direction == 'forward') {
             var nextSlideId = $.global.item + 1;
         }
-        console.log(direction, nextSlideId)
-
-        
-        
 
         if (nextSlideId == -1) {
              
@@ -763,6 +735,7 @@ sliderJQuery(function( $ ) {
       resetAutoSlide();
 });
 </script>
+<p>Une grande chambre de 29 m²  pour deux personnes seules ou en couple avec deux portes fenêtres donnant chacune accès à un balcon, un côté jardin, un autre côté rue avec vue mer.</p>
 <p>Équipée d&rsquo;une literie de qualité en 180x200 ou 2 lits simples en 90x 200 et d&rsquo;une grande salle de bains privée avec toilette et douche à l&rsquo;italienne.</p>
 <h4 id="tarifs-de-la-tamaris">Tarifs de la Tamaris</h4>
 <table>
@@ -776,20 +749,19 @@ sliderJQuery(function( $ ) {
 <tbody>
 <tr>
 <td>Inférieure à 3 nuitées</td>
-<td>115 €</td>
-<td>135 €</td>
+<td>145 €</td>
+<td>160 €</td>
 </tr>
 <tr>
 <td>A partir de 3 nuitées</td>
-<td>98 €</td>
-<td>120 €</td>
+<td>130 €</td>
+<td>145 €</td>
 </tr>
 </tbody>
 </table>
 <p>Nous n&rsquo;ajoutons pas de supplément pour vos enfants de moins de 3 ans.</p>
 <p>Un lit bébé peut être installé sur demande.</p>
 <p>Pour vos enfants au-delà de 3 ans, un lit enfant peut être installé sur demande pour 20 €.</p>
-<p>Une petite chambre équipée d&rsquo;un lit en 90x200 est également à votre disposition pour 40 € petit déjeuner inclus.</p>
 
 
 <div class="btn-center">
@@ -799,17 +771,16 @@ sliderJQuery(function( $ ) {
 </p>
                 </section>
             </article>
+            <div class='post-after'></div>
         </div>
     
         <div class='post-holder'>
             <article class='post '>
-             
-                <header class="post-header"    >
+                <header class="post-header">
                     <h2 class="post-title" id="la-maison">La maison</h2>
                 </header>
-            
                 <section class="post-content">
-                    <p><p>La Masqueville, une vieille bâtisse dont les dernières archives connues remontent à la fin du 19eme (1875), témoin d&rsquo;un passif aultois mouvementé. Très certainement à l&rsquo;origine un relais pour chevaux de calèche, tantôt habilitée en tant que couvent pour des religieuses puis occupée durant la seconde guerre. Elle est devenue, après guerre, un lieu de villégiature dans la vague des villas balnéaires de l&rsquo;époque sur le littoral.</p>
+                    <p>
 
 
 
@@ -830,8 +801,6 @@ sliderJQuery(function( $ ) {
 
 <style>
 #slide-show-house {
-    -webkit-tap-highlight-color: transparent;
-
     position: relative;
     width: 100%;
     height: 300px;
@@ -839,7 +808,7 @@ sliderJQuery(function( $ ) {
     top: 0px;
     left: 0px;
 
-    margin: 1.5em 0;
+    margin: 50px 0;
 }
 
 #slide-show-house .slides-list {
@@ -903,8 +872,8 @@ sliderJQuery(function( $ ) {
     <ol class="slides-list">
                 <li class="slide" style="background-image:url(https://lamasqueville.github.io/images/house/1.jpg);"></li>
     </ol>
-    <span id="slide-show-house-arrow-left" class="left nav fa  fa-3x"></span>
-    <span id="slide-show-house-arrow-right" class="right nav fa  fa-3x"></span>
+    <span class="left nav fa fa-chevron-circle-left fa-3x"></span>
+    <span class="right nav fa fa-chevron-circle-right fa-3x"></span>
 </div>
 
 <script>
@@ -955,17 +924,12 @@ sliderJQuery(function( $ ) {
     });
 
     function performSlide(direction) {
-
         if (direction == 'back') {
             var nextSlideId = $.global.item - 1;
         }
         if (direction == 'forward') {
             var nextSlideId = $.global.item + 1;
         }
-        console.log(direction, nextSlideId)
-
-        
-        
 
         if (nextSlideId == -1) {
              
@@ -1004,26 +968,22 @@ sliderJQuery(function( $ ) {
       resetAutoSlide();
 });
 </script>
-<p>Décorée avec soin à partir d&rsquo;objets anciens la maison a su garder cachet et authenticité, vous offrant un véritable havre de paix hors du temps.</p>
-<p>Vous pourrez également chiner et profiter de la sélection d&rsquo;objets anciens de
-nanibroc, 
-<a class="external" href="https://www.etsy.com/shop/nanibroc" target="_blank">notre boutique en ligne</a>.
-</p>
-<p>En juillet et en août, nous disposons d&rsquo;une cabine de plage située sur la plage d&rsquo;Ault que nous nous ferons un plaisir de partager avec vous.</p>
+<p>La Masqueville, une vieille bâtisse dont les dernières archives connues remontent à la fin du 19eme (1875), témoin d&rsquo;un passif aultois mouvementé.</p>
+<p>Très certainement à l&rsquo;origine un relais pour chevaux de calèche, tantôt habilitée en tant que couvent pour des religieuses puis occupée durant la seconde guerre.</p>
+<p>Elle est devenue, après guerre, un lieu de villégiature dans la vague des villas balnéaires de l&rsquo;époque sur le littoral.</p>
 </p>
                 </section>
             </article>
+            <div class='post-after'></div>
         </div>
     
         <div class='post-holder'>
             <article class='post '>
-             
-                <header class="post-header"    >
+                <header class="post-header">
                     <h2 class="post-title" id="les-environs">Les environs</h2>
                 </header>
-            
                 <section class="post-content">
-                    <p><p>L&rsquo;office de tourisme est situé à quelques pas de la maison. Au boût de la rue vous trouverez commerces, cafés et restaurants donnant sur la plage d&rsquo;Ault, sauvage et pittoresque.</p>
+                    <p>
 
 
 
@@ -1044,8 +1004,6 @@ nanibroc,
 
 <style>
 #slide-show-around {
-    -webkit-tap-highlight-color: transparent;
-
     position: relative;
     width: 100%;
     height: 300px;
@@ -1053,7 +1011,7 @@ nanibroc,
     top: 0px;
     left: 0px;
 
-    margin: 1.5em 0;
+    margin: 50px 0;
 }
 
 #slide-show-around .slides-list {
@@ -1117,8 +1075,8 @@ nanibroc,
     <ol class="slides-list">
                 <li class="slide" style="background-image:url(https://lamasqueville.github.io/images/around/1.jpg);"></li>
     </ol>
-    <span id="slide-show-around-arrow-left" class="left nav fa  fa-3x"></span>
-    <span id="slide-show-around-arrow-right" class="right nav fa  fa-3x"></span>
+    <span class="left nav fa fa-chevron-circle-left fa-3x"></span>
+    <span class="right nav fa fa-chevron-circle-right fa-3x"></span>
 </div>
 
 <script>
@@ -1169,17 +1127,12 @@ sliderJQuery(function( $ ) {
     });
 
     function performSlide(direction) {
-
         if (direction == 'back') {
             var nextSlideId = $.global.item - 1;
         }
         if (direction == 'forward') {
             var nextSlideId = $.global.item + 1;
         }
-        console.log(direction, nextSlideId)
-
-        
-        
 
         if (nextSlideId == -1) {
              
@@ -1218,21 +1171,33 @@ sliderJQuery(function( $ ) {
       resetAutoSlide();
 });
 </script>
-<p>A quelques minutes de marche, la plage d&rsquo;Onival et sa base nautique, l&rsquo;entrée du sentier littoral (GR) sur les falaises naissantes de normandie au long duquel vous pourrez découvrir le bois de Cise et ses villas Belle Époque et la réserve naturelle du hâble d&rsquo;Ault.</p>
-<p>Un peu plus loin, la ville de Mers-les-Bains, classée pour ses villas colorées, le Tréport, son phare et sa criée et la ville d&rsquo;Eu, ville royale, son château et sa grande forêt domaniale.</p>
-<p>A quelques minutes de voiture, Cayeux sur Mer et ses cabines de plages, la pointe du Hourdel, la baie, ses phoques ou encore Saint Valéry sur Somme, cité médiévale et son quartier des marins.</p>
+<h3 id="a-pied">A pied</h3>
+<p>L&rsquo;office de tourisme et la bibliotheque à quelques pas de la maison.</p>
+<p>La Mer, la grand rue ses commerces cafés et restaurants, son marché.</p>
+<p>La plage d&rsquo;Ault, sauvage et pittoresque.</p>
+<p>La plage d&rsquo;Onival et sa base nautique.</p>
+<p>De belles balades sur le sentier littoral et les falaises, entrée de GR.</p>
+<p>Le hâble d&rsquo;Ault, réserve naturelle.</p>
+<p>Le bois de Cise, la partie cachée de Ault, son bois naturel sauvegardé et ses
+villas Belle Époque.</p>
+<h3 id="a-proximite-en-voiture">A proximite en voiture</h3>
+<p>Mers-les-Bains ville classée pour ses villas colorées.</p>
+<p>Le Tréport, son port, sa criée.</p>
+<p>Eu, ville royale et sa grande forêt domaniale.</p>
+<p>Cayeux sur Mer et ses cabines de plages.</p>
+<p>La pointe du Hourdel, la baie, ses phoques.</p>
+<p>Saint Valéry sur Somme, cité médiévale et son quartier des marins.</p>
 </p>
                 </section>
             </article>
+            <div class='post-after'></div>
         </div>
     
         <div class='post-holder'>
             <article class='post '>
-             
-                <header class="post-header"    >
+                <header class="post-header">
                     <h2 class="post-title" id="nous-contacter">Nous contacter</h2>
                 </header>
-            
                 <section class="post-content">
                     <p>
 
@@ -1261,19 +1226,33 @@ sliderJQuery(function( $ ) {
 </p>
                 </section>
             </article>
+            <div class='post-after'></div>
+        </div>
+    
+        <div class='post-holder'>
+            <article class='post '>
+                <header class="post-header">
+                    <h2 class="post-title" id="mesures-covid">Mesures Covid</h2>
+                </header>
+                <section class="post-content">
+                    <p><p>Du gel hydroacoolique est à votre disposition dans les chambres et parties communes.</p>
+<p>Pour palier à la fermeture des commerces de restaurations, nous vous offrons <a href="#nous-contacter">sur demande</a> plusieurs dispositifs pour vous permettre de prendre vos repas.</p>
+</p>
+                </section>
+            </article>
+            <div class='post-after'></div>
         </div>
     
         <div class='post-holder'>
             <article class='post last'>
-             
-                <header class="post-header"    >
+                <header class="post-header">
                     <h2 class="post-title" id=""></h2>
                 </header>
-            
                 <section class="post-content">
                     <p></p>
                 </section>
             </article>
+            <div class='post-after'></div>
         </div>
     
 </main>
